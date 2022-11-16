@@ -1,0 +1,20 @@
+--- Consulta 01 ---
+
+[nome]	Nome do arquivo que está sendo enviado
+[Tamanho]	Tamanho do arquivo
+[modelo]	Tipo de arquivo (como .pdf, .zip, .jpeg… ..etc)
+[nome_tmp]	Um endereço temporário onde o arquivo está localizado antes de processar a solicitação de upload
+[erro]	Tipos de erros ocorridos durante o upload do arquivo
+
+$_FILES[input-field-name][name]
+$_FILES[input-field-name][size]
+$_FILES[input-field-name][type]
+$_FILES[input-field-name][tmp_name]
+$_FILES[input-field-name][error] 
+
+-------------------
+
+--- Consulta 02 ---
+
+
+-------------------

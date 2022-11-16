@@ -7,20 +7,20 @@ if (isset($_POST['entrar'])) {
         $verifica->execute(array($_POST['email']));
         $verificando = $verifica->rowCount();
 
-        if ($verificando >= 1) {
+        if ($verificando >= 1) { // Verficação de existência do Email.
             echo "<h3>Este Email já está registrado!</h3>";
-        } elseif ($_POST['nome'] == '' or strlen($_POST['nome']) < 3) {
+        } elseif ($_POST['nome'] == '' or strlen($_POST['nome']) < 3) { // Verificação de Validade do Nome
             echo "<h3>Nome Inválido!</h3>";
-        } elseif ($_POST['apelido'] == '') {
+        } elseif ($_POST['apelido'] == '') { // Verificação de Validade do Apelido
             echo "<h3>Apelido Inválido!</h3>";
-        } elseif ($_POST['email'] == '' or strlen($_POST['email']) < 3) {
+        } elseif ($_POST['email'] == '' or strlen($_POST['email']) < 3) { // Verificação de Validade do Email
             echo "<h3>Email Inválido!</h3>";
-        } elseif ($_POST['senha'] == '' or strlen($_POST['senha']) < 3) {
+        } elseif ($_POST['senha'] == '' or strlen($_POST['senha']) < 3) { // Verificação de Validade da Senha
             echo "<h3>Senha Inválida!</h3>";
         } else {
             $sql = $pdo->prepare("INSERT INTO usuarios VALUES (null,?,?,?,?,?)");
-            $sql->execute(array($_POST['nome'], $_POST['apelido'], $_POST['email'], $_POST['senha'], $_POST['data']));
-            setcookie('login', $_POST['email']);
+            $sql->execute(array($_POST['nome'], $_POST['apelido'], $_POST['email'], $_POST['senha'], $_POST['data'])); // Cadastro de Novo usuário no BD
+            setcookie('login', $_POST['email']); // Novo Usuário Logado!! 
             header("location: ./");
         }
     } catch (PDOException $erro) {

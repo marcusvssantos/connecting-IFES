@@ -3,7 +3,7 @@ include("conexao.php");
 
 
 $login_cookie = $_COOKIE['login'];
-if (!isset($login_cookie)) {
+if (!isset($login_cookie)) { //Verificação de Login do Usuário
     header("Location: login.php");
 }
 
@@ -11,6 +11,9 @@ if (!isset($login_cookie)) {
 
 <!DOCTYPE html>
 <html lang="en">
+
+
+
 
 <head>
     <meta charset="UTF-8">
@@ -26,6 +29,7 @@ if (!isset($login_cookie)) {
 </head>
 
 <body>
+    <!-- Início Menu Superior -->
     <div id="topo">
         <a href="#"><img src="img/logoIFES.svg" width="90" name="logo"></a>
         <form method="GET">
@@ -34,6 +38,7 @@ if (!isset($login_cookie)) {
         <a href="#"><img src="img/chat.svg" width="20" name="menu"></a>
         <a href="#"><img src="img/perfil.svg" width="20" name="menu"></a>
     </div>
+    <!-- Fim Menu Superior -->
 </body>
 
 </html>

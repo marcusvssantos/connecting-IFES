@@ -2,14 +2,13 @@
 include("conexao.php");
 
 if (isset($_POST['entrar'])) {
-
     $verifica = $pdo->prepare("SELECT * FROM usuarios WHERE email = ? AND senha=?");
     $verifica->execute(array($_POST['email'], $_POST['senha']));
 
-    if ($verifica->rowCount() <= 0) {
+    if ($verifica->rowCount() <= 0) {     // Validação do usuário
         echo "<h3>Email ou Senha Incorretos!</h3>";
     } else {
-        setcookie('login', $_POST['email']);
+        setcookie('login', $_POST['email']); // Usuário Logado!
         header("location: ./");
     }
 }

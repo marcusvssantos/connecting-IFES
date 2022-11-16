@@ -1,9 +1,11 @@
 html {
     font-size: 62.5%;
+    /* ^^^^ Configuração para 10 px ser igual a 1rem */
 }
 
 body {
     font-size: 1.6rem;
+    /* ^^^^ Configuração para 10 px ser igual a 1rem */
 }
 
 * {
@@ -11,6 +13,7 @@ body {
     margin: 0;
 }
 
+/*  Início Menu Superior  */
 div#topo {
     width: 100%;
     top: 0;
@@ -50,6 +53,11 @@ div#topo form {
     padding-top: 1.8rem;
 
 }
+
+/*  Fim Menu Superior  */
+
+
+/*  Início Publicações  */
 
 div#publicacao {
     width: 40rem;
@@ -99,3 +107,5 @@ div#publicacao input[type="submit"] {
 div#publicacao input[type="submit"]:hover {
     background: #001F3F;
 }
+
+/*  Fim Publicações  */

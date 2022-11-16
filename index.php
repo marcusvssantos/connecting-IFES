@@ -1,5 +1,29 @@
 <?php
 include("header.php");
+
+if (isset($_POST['publicar'])) {
+    if ($_FILES["file"]["error"] > 0) {
+        $texto = $_POST["texto"];
+        $hoje = date("Y-m-d");
+
+        if ($texto == "") {
+            echo "<h3>O Texto não Pode Ficar em Branco na Publicação!</h3>";
+        } else {
+            $query = "INSERT INTO publicacao ('usuario','texto','data') VALUES ('$login_cookie', '$texto', '$hoje')";
+            $data = $pdo->prepare($query) or die();
+            if ($data) {
+                header("Location: ./");
+            } else {
+                echo "Ocorreu um erro, tente novamente mais tarde!";
+            }
+        }
+    } else {
+        $n = rand(0, 1000000); // Gera um número entre 0 e 1000000.
+        $img = $n . $_FILES["file"]["name"]; // Consulta 01
+        move_uploaded_file($_FILES["file"]["tm_name"], "upload/" . $img);
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
